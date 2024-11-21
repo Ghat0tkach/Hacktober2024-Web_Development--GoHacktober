@@ -1,5 +1,5 @@
 // Use environment variable for the base URL
-const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || process.env.REACT_APP_BACKEND_URL;
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
 // Function for starting GitHub authentication
 export const startGithubAuthentication = async () => {

@@ -50,12 +50,12 @@ const Navbar = () => {
             DASHBOARD
           </Link>
 
-          <Link
+          {/* <Link
             to="/team"
             className="text-gray-700 hover:text-green-500 relative pb-1 border-b-2 border-transparent hover:border-green-500 transition duration-300"
           >
             TEAM
-          </Link>
+          </Link> */}
 
           <Link
             to="/contact"
@@ -81,7 +81,7 @@ const Navbar = () => {
               className="h-10 w-10 rounded-full cursor-pointer"
               onClick={toggleDropdown}
             />
-            {dropdownOpen && (
+            {/* {dropdownOpen && (
               <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 z-10">
                 <Link
                   to="/dashboard"
@@ -96,7 +96,7 @@ const Navbar = () => {
                   Profile Page
                 </Link>
               </div>
-            )}
+            )} */}
           </div>
 
           {/* Hamburger Menu for Mobile */}
