@@ -22,15 +22,21 @@ const chartSetting = {
 
 // Function to create a dataset for BarChart
 const createDataset = (contributionsData) => {
-    return contributionsData.flatMap(repo => {
-        const issues = repo.contributions.issues !== null ? repo.contributions.issues : 0;
-        const pulls = repo.contributions.pulls !== null ? repo.contributions.pulls : 0;
+    return contributionsData.flatMap((repo) => {
+        const { contributions } = repo;
+
+        // Ensure issues and pulls default to empty arrays if null or undefined
+        const issues = contributions?.issues || [];
+        const pulls = contributions?.pulls || [];
+
+        // Return formatted dataset entries with counts
         return [
-            { day: repo.repo_name + " - Issues", count: issues },
-            { day: repo.repo_name + " - Pull Requests", count: pulls },
+            { day: `${repo.repo_name} - Issues`, count: issues.length },
+            { day: `${repo.repo_name} - Pull Requests`, count: pulls.length },
         ];
     });
 };
+
 
 const ContributionChart = ({ contributions }) => {
     const dataset = createDataset(contributions); // Create dataset from contributions prop

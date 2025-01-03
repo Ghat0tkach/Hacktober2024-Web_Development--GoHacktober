@@ -35,6 +35,7 @@ const DashboardPage = () => {
       setTotalStats(getTotalContributions(data));
       setProfileUrl(profileUrl.avatar_url);
       setLoading(false);
+      
     } catch (err) {
       setError("Failed to load stats.");
     }

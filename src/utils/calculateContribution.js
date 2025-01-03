@@ -3,22 +3,26 @@ export const getTotalContributions = (data) => {
     let totalIssues = 0;
     let totalPulls = 0;
 
-    data.forEach(repo => {
-        // Only count the repository if there are issues or pulls
-        if (repo.contributions.issues !== null || repo.contributions.pulls !== null) {
-            totalRepos += 1; // Count this repo
-            if (repo.contributions.issues !== null) {
-                totalIssues += repo.contributions.issues;
+    data.forEach((repo) => {
+        const { contributions } = repo;
+
+        // Check if contributions exist
+        if (contributions) {
+            const issues = contributions.issues || [];
+            const pulls = contributions.pulls || [];
+
+            // Increment counts based on array lengths
+            if (issues.length > 0 || pulls.length > 0) {
+                totalRepos += 1; // Count the repository only if it has issues or pulls
             }
-            if (repo.contributions.pulls !== null) {
-                totalPulls += repo.contributions.pulls;
-            }
+            totalIssues += issues.length; // Add total issues
+            totalPulls += pulls.length;   // Add total pull requests
         }
     });
 
     return {
         totalRepos,
         totalIssues,
-        totalPulls
+        totalPulls,
     };
 };
