@@ -1,12 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Avatar, Dialog, DialogTitle, DialogContent, DialogActions, Button } from "@mui/material";
-
-import { BarChart } from "@mui/x-charts/BarChart";
-import { axisClasses } from "@mui/x-charts/ChartsAxis";
-
 import Hero from '../components/Hero';
 import { Contributions } from "../components/Contributions";
-
 import { getContributions, getProfileUrl } from "../api/github";
 import SpinnerLoader from "../components/Loader";
 import Stats from "../components/StatCard";

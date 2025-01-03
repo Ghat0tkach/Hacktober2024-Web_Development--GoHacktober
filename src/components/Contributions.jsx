@@ -1,6 +1,4 @@
 export const Contributions = ({ data }) => {
-    console.log(data); // Debug to inspect the input data structure
-
     return (
         <div className="space-y-2">
             {data.map((repo, index) => (

@@ -13,7 +13,6 @@ import ContactPage from './pages/ContactPage';
 import AboutUs from './pages/AboutUs';
 
 function App() {
-  console.log(window.location.pathname)
   return (
     <Router>
       <Routes>

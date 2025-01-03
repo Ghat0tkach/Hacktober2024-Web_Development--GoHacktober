@@ -1,7 +1,6 @@
 // Use environment variable for the base URL
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
-console.log(BACKEND_URL);
 // Function for starting GitHub authentication
 export const startGithubAuthentication = async () => {
     window.location.href = `${BACKEND_URL}/auth/github`;
